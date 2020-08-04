@@ -1,0 +1,7 @@
+{
+  "name": "sensors2osc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
