@@ -1,0 +1,89 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title> <ion-icon name="settings-outline"></ion-icon> </ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onCancel()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <form [formGroup]="hostForm" (submit)="setHost()">
+
+          <ion-item color="secondary">
+              <ion-label position="floating">Host Address</ion-label>
+              <ion-input 
+                type="text" 
+                formControlName="address" 
+              ></ion-input>
+          </ion-item>
+      
+          <ion-item color="secondary">
+              <ion-label position="floating">Send to Port</ion-label>
+              <ion-input formControlName="port" type="number"></ion-input>
+          </ion-item>
+          
+          <ion-button
+            size="small" 
+            type="submit" 
+            color="primary" 
+            expand="block"
+            [disabled]="!hostForm.valid"
+          >
+            <ion-icon name="checkmark-outline"></ion-icon>
+          </ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-top: 10%;">
+      <ion-col>
+        <ion-list>
+          <ion-item color="secondary" lines="full">
+            <ion-label>
+              Theme
+            </ion-label>          
+            <ion-segment 
+              mode="ios" 
+              style="--background:var(--ion-color-secondary)" 
+              scrollable 
+              value={{theme._THEME}}
+              (ionChange)="themeChanged($event)">          
+              <ion-segment-button value="light" color="secondary">
+                <ion-label> Light </ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="dark" color="secondary">
+                <ion-label> dark </ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-item>
+          <ion-item color="secondary" lines="full"> 
+            <ion-label>
+              Awake Mode
+            </ion-label>
+            <ion-segment 
+                scrollable 
+                mode="ios" 
+                style="--background:var(--ion-color-secondary)" 
+                value={{theme.awake}}
+                (ionChange)="awakeModeChanged($event)"
+              >          
+              <ion-segment-button value="true" color="secondary">
+                <ion-label> On </ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="false" color="secondary">
+                <ion-label> Off </ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+  
+</ion-content>
