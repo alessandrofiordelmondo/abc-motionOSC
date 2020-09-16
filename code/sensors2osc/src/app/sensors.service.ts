@@ -3,7 +3,6 @@ import { Subscription } from 'rxjs';
 import { Plugins, MotionEventResult, MotionOrientationEventResult} from '@capacitor/core';
 import { Magnetometer, MagnetometerReading } from '@ionic-native/magnetometer/ngx';
 import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation/ngx';
-import { Sensors, TYPE_SENSOR } from '@ionic-native/sensors/ngx';
 
 import * as OSC from 'cordova-plugin-osc/www/OSC'
 import { DataService } from './data.service';
@@ -19,7 +18,6 @@ export class SensorsService {
     private zone: NgZone,
     private magne: Magnetometer,
     private deviceHeading: DeviceOrientation,
-    private cordovaSens: Sensors,
     private data: DataService
   ) {}
 
@@ -198,30 +196,4 @@ export class SensorsService {
     this.headingIsStarted = false;
     this.heading.unsubscribe()
   }
-
-  //LIGHT
-  private Light;
-  private LightIsStarted:boolean = false;
-  public lightValue = {l: 0};
-
-  public lightOSCAddress:string = '/light'
-
-  public watchLight(){
-    this.LightIsStarted = true;
-    this.cordovaSens.enableSensor(TYPE_SENSOR.LIGHT)
-    this.Light = setInterval(() => {
-      this.cordovaSens.getState().then(e => {
-        this.lightValue.l = e;
-        this.sendOsc(this.lightOSCAddress+'/l', e);
-        console.log(e)
-      })
-    }, 100)
-  }
-
-  public stopLight(){
-    this.LightIsStarted = false
-    clearInterval(this.Light);
-    this.cordovaSens.disableSensor()
-  }
-
 }

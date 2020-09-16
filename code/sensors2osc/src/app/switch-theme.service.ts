@@ -20,7 +20,7 @@ export class SwitchThemeService {
   public _THEME: 'light'|'dark' = 'dark';
   private themes: Theme[] = [];
 
-  private darkColorsArry:string[] = ['#00eeee', '#00aaee', '#00eeaa'];
+  private darkColorsArry:string[] = ['#aa0000', '#0022aa', '#00aa22'];
   private lightColorsArry:string[] = ['#ff0000', '#00aa00', '#0000cc'];
 
   public colorsArry: string[] = this.darkColorsArry;
@@ -38,25 +38,25 @@ export class SwitchThemeService {
       {
         name: 'dark',
         styles: [
-          { themeVariable: '--ion-background-color', value:'#333333'},
-          { themeVariable: '--ion-color-primary', value:'#e9ffff'},
-          { themeVariable: '--ion-color-primary-rgb', value:'233,255,255'},
-          { themeVariable: '--ion-color-primary-contrast', value: '#000000'},
-          { themeVariable: '--ion-color-primary-contrast-rgb', value: '0,0,0'},
-          { themeVariable: '--ion-color-primary-shade', value: '#cde0e0'},
-          { themeVariable: '--ion-color-primary-tint', value: '#ebffff'},
-          { themeVariable: '--ion-color-secondary', value: '#788585'},
-          { themeVariable: '--ion-color-secondary-rgb', value: '120,133,133'},
-          { themeVariable: '--ion-color-primary', value: '#e9ffff'},
-          { themeVariable: '--ion-color-secondary-contrast-rgb', value: '0,0,0'},
-          { themeVariable: '--ion-color-secondary-shade', value: '#6a7575'},
-          { themeVariable: '--ion-color-secondary-tint', value: '#869191'},
-          { themeVariable: '--ion-color-tertiary', value: '#324646'},
-          { themeVariable: '--ion-color-tertiary-rgb', value: '50,70,70'},
-          { themeVariable: '--ion-color-primary', value: '#e9ffff'},
-          { themeVariable: '--ion-color-tertiary-contrast-rgb', value: '255,255,255'},
-          { themeVariable:'--ion-color-tertiary-shade', value: '#2c3e3e'},
-          { themeVariable: '--ion-color-tertiary-tint', value: '#475959'},
+          { themeVariable: '--ion-background-color', value:'#131313'},
+          { themeVariable: '--ion-color-primary', value:'#181818'},
+          { themeVariable: '--ion-color-primary-rgb', value:'0,0,0'},
+          { themeVariable: '--ion-color-primary-contrast', value: '#ffffff'},
+          { themeVariable: '--ion-color-primary-contrast-rgb', value: '255,255,255'},
+          { themeVariable: '--ion-color-primary-shade', value: '#000000'},
+          { themeVariable: '--ion-color-primary-tint', value: '#1a1a1a'},
+          { themeVariable: '--ion-color-secondary', value: '#646464'},
+          { themeVariable: '--ion-color-secondary', value: '#646464'},
+          { themeVariable: '--ion-color-secondary-contrast', value: '#ffffff'},
+          { themeVariable: '--ion-color-secondary-contrast-rgb', value: '255,255,255'},
+          { themeVariable: '--ion-color-secondary-shade', value: '#585858'},
+          { themeVariable: '--ion-color-secondary-tint', value: '#747474'},
+          { themeVariable: '--ion-color-tertiary', value: '#222222'},
+          { themeVariable: '--ion-color-tertiary-rgb', value: '50,60,60'},
+          { themeVariable: '--ion-color-tertiary-contrast', value: '#aaaaaa'},
+          { themeVariable: '--ion-color-tertiary-contrast-rgb', value: '200,200,200'},
+          { themeVariable: '--ion-color-tertiary-shade', value: '#2c3535'},
+          { themeVariable: '--ion-color-tertiary-tint', value: '#475050'},
           { themeVariable: '--ion-color-success', value: '#2dd36f'},
           { themeVariable: '--ion-color-success-rgb', value: '45,211,111'},
           { themeVariable: '--ion-color-success-contrast', value: '#ffffff'},
@@ -92,33 +92,35 @@ export class SwitchThemeService {
           { themeVariable: '--ion-color-light-contrast', value:'#000000'},
           { themeVariable: '--ion-color-light-contrast-rgb', value: '0,0,0'},
           { themeVariable: '--ion-color-light-shade', value: '#d7d8da'},
-          { themeVariable: '--ion-color-light-tint', value: '#f5f6f9'}
+          { themeVariable: '--ion-color-light-tint', value: '#f5f6f9'},
+          { themeVariable: '--ion-font-family', value: 'Righteous-Regular'}
         ]
       },
       {
         name: 'light',
         styles: [
-          { themeVariable: '--ion-background-color', value:'#cccccc'},
-          { themeVariable: '--ion-color-primary', value:'#00ffff'},
-          { themeVariable: '--ion-color-primary-rgb', value:'0,255,255'},
+          { themeVariable: '--ion-background-color', value:'#eeeeee'},
+
+          { themeVariable: '--ion-color-primary', value:'#cccccc'},
+          { themeVariable: '--ion-color-primary-rgb', value:'200,200,200'},
           { themeVariable: '--ion-color-primary-contrast', value: '#000000'},
           { themeVariable: '--ion-color-primary-contrast-rgb', value: '0,0,0'},
-          { themeVariable: '--ion-color-primary-shade', value: '#00e0e0'},
-          { themeVariable: '--ion-color-primary-tint', value: '#1affff'},
+          { themeVariable: '--ion-color-primary-shade', value: '#b0b0b0'},
+          { themeVariable: '--ion-color-primary-tint', value: '#cecece'},
 
-          { themeVariable: '--ion-color-secondary', value: '#a8c8e6'},
-          { themeVariable: '--ion-color-secondary-rgb', value: '168,200,230'},
-          { themeVariable: '--ion-color-primary', value: '#000000'},
+          { themeVariable: '--ion-color-secondary', value: '#dddddd'},
+          { themeVariable: '--ion-color-secondary-rgb', value: '200,200,200'},
+          { themeVariable: '--ion-color-secondary-contrast', value: '#333333'},
           { themeVariable: '--ion-color-secondary-contrast-rgb', value: '0,0,0'},
-          { themeVariable: '--ion-color-secondary-shade', value: '#94b0ca'},
-          { themeVariable: '--ion-color-secondary-tint', value: '#b1cee9'},
+          { themeVariable: '--ion-color-secondary-shade', value: '#333333'},
+          { themeVariable: '--ion-color-secondary-tint', value: '#333333'},
           
-          { themeVariable: '--ion-color-tertiary', value: '#5260ff'},
-          { themeVariable: '--ion-color-tertiary-rgb', value: '82,96,255'},
-          { themeVariable: '--ion-color-primary', value: '#ffffff'},
-          { themeVariable: '--ion-color-tertiary-contrast-rgb', value: '255,255,255'},
-          { themeVariable:'--ion-color-tertiary-shade', value: '#4854e0'},
-          { themeVariable: '--ion-color-tertiary-tint', value: '#6370ff'},
+          { themeVariable: '--ion-color-tertiary', value: '#dddddd'},
+          { themeVariable: '--ion-color-tertiary-rgb', value: '150,170,170'},
+          { themeVariable: '--ion-color-tertiary-contrast', value: '#000000'},
+          { themeVariable: '--ion-color-tertiary-contrast-rgb', value: '0,0,0'},
+          { themeVariable: '--ion-color-tertiary-shade', value: '#849696'},
+          { themeVariable: '--ion-color-tertiary-tint', value: '#a1b3b3'},
 
           { themeVariable: '--ion-color-success', value: '#2dd36f'},
           { themeVariable: '--ion-color-success-rgb', value: '45,211,111'},
@@ -155,7 +157,9 @@ export class SwitchThemeService {
           { themeVariable: '--ion-color-light-contrast', value:'#000000'},
           { themeVariable: '--ion-color-light-contrast-rgb', value: '0,0,0'},
           { themeVariable: '--ion-color-light-shade', value: '#d7d8da'},
-          { themeVariable: '--ion-color-light-tint', value: '#f5f6f9'}
+          { themeVariable: '--ion-color-light-tint', value: '#f5f6f9'},
+
+          { themeVariable: '--ion-font-family', value: 'Righteous-Regular'}
         ]
       }
     ]

@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "sensors2osc",
+  "appId": "com.abc.motionOSC",
+  "appName": "motionOSC",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www",

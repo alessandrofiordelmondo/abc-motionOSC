@@ -1,33 +1,35 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="tertiary">
-    <ion-title>
-      Sensors2osc
+  <ion-toolbar color="primary">
+    <ion-title slot="start">
+      motion<sup>osc</sup>
     </ion-title>
+      <ion-img *ngIf="theme._THEME=='light'" slot="end" class="img-icon" src="../assets/icon/abc-icon-256.png"></ion-img>
+      <ion-img *ngIf="theme._THEME=='dark'" slot="end" class="img-icon" src="../assets/icon/abc-icon-256-invert.png"></ion-img>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
   <ion-list>
     <!--ACCELEROMETER-->
     <ion-item color="secondary">
       <ion-label class="custom-label">Accelerometer <em>m/s<sup>2</sup></em></ion-label>
-      <ion-button (click)="sensors.watchAccelerometer(); accelStart = true" *ngIf="accelStart == false"> Start </ion-button>
-      <ion-button (click)="sensors.stopAccelerometer(); accelStart = false" *ngIf="accelStart == true" color="tertiary"> stop </ion-button>
+      <ion-button class="but" (click)="sensors.watchAccelerometer(); accelStart = true" *ngIf="accelStart == false" > Start </ion-button>
+      <ion-button class="but" (click)="sensors.stopAccelerometer(); accelStart = false" *ngIf="accelStart == true" color="tertiary"> stop </ion-button>
       
-      <ion-button (click)="accelView = true" *ngIf="accelView==false">
+      <ion-button class="but" (click)="accelView = true" *ngIf="accelView==false">
         <ion-icon name="arrow-down-outline"></ion-icon>
       </ion-button>
       
-      <ion-button (click)="accelView = false" *ngIf="accelView==true">
+      <ion-button class="but" (click)="accelView = false" *ngIf="accelView==true">
         <ion-icon name="arrow-up-outline"></ion-icon>
       </ion-button>
     </ion-item>
     <ion-item *ngIf="accelView == true" >
       <ion-label color="primary" class="ion-no-margin" style="font-size: 10px;">
         
-        <ion-select [(ngModel)]="sensors.accelValuesType" interface="popover" >
-          <ion-select-option value="wG" class="my-custom-option">with Gravity</ion-select-option>
-          <ion-select-option value="nG">without Gravity</ion-select-option>
+        <ion-select color="secondary" [(ngModel)]="sensors.accelValuesType" interface="popover" [interfaceOptions]=myCustomInterface>
+        <ion-select-option value="wG" class="opt">with Gravity</ion-select-option>
+          <ion-select-option value="nG" class="opt">without Gravity</ion-select-option>
         </ion-select>
 
       </ion-label>
@@ -43,14 +45,14 @@
     <!--GYROSCOPE-->
     <ion-item color="secondary">
       <ion-label  class="custom-label">Gyroscope <em>deg/s</em></ion-label>
-      <ion-button (click)="sensors.watchGyroscope(); gyroStart = true" *ngIf="gyroStart == false"> Start </ion-button>
-      <ion-button color="tertiary" (click)="sensors.stopGyroscope(); gyroStart = false" *ngIf="gyroStart == true"> stop </ion-button>
+      <ion-button class="but" (click)="sensors.watchGyroscope(); gyroStart = true" *ngIf="gyroStart == false"> Start </ion-button>
+      <ion-button class="but" color="tertiary" (click)="sensors.stopGyroscope(); gyroStart = false" *ngIf="gyroStart == true"> stop </ion-button>
       
-      <ion-button (click)="gyroView = true" *ngIf="gyroView==false">
+      <ion-button class="but" (click)="gyroView = true" *ngIf="gyroView==false">
         <ion-icon name="arrow-down-outline"></ion-icon>
       </ion-button>
       
-      <ion-button (click)="gyroView = false" *ngIf="gyroView==true">
+      <ion-button class="but" (click)="gyroView = false" *ngIf="gyroView==true">
         <ion-icon name="arrow-up-outline"></ion-icon>
       </ion-button>
     </ion-item>
@@ -65,14 +67,14 @@
     <!--MAGNETOMETER-->
     <ion-item color="secondary">
       <ion-label class="custom-label">Magnetometer <em>µT</em></ion-label>
-      <ion-button (click)="sensors.watchMagnetometer(); magneStart = true" *ngIf="magneStart == false"> Start </ion-button>
-      <ion-button color="tertiary" (click)="sensors.stopMagnetometer(); magneStart = false" *ngIf="magneStart == true"> stop </ion-button>
+      <ion-button class="but" (click)="sensors.watchMagnetometer(); magneStart = true" *ngIf="magneStart == false"> Start </ion-button>
+      <ion-button class="but" color="tertiary" (click)="sensors.stopMagnetometer(); magneStart = false" *ngIf="magneStart == true"> stop </ion-button>
       
-      <ion-button (click)="magneView = true" *ngIf="magneView==false">
+      <ion-button class="but" (click)="magneView = true" *ngIf="magneView==false">
         <ion-icon name="arrow-down-outline"></ion-icon>
       </ion-button>
       
-      <ion-button (click)="magneView = false" *ngIf="magneView==true">
+      <ion-button class="but" (click)="magneView = false" *ngIf="magneView==true">
         <ion-icon name="arrow-up-outline"></ion-icon>
       </ion-button>
     </ion-item>
@@ -87,14 +89,14 @@
     <!--ORIENTATION-->
     <ion-item color="secondary">
       <ion-label class="custom-label">Orientation <em>deg</em></ion-label>
-      <ion-button (click)="sensors.watchOrientation(); orientStart = true" *ngIf="orientStart == false"> Start </ion-button>
-      <ion-button color="tertiary" (click)="sensors.stopOrientation(); orientStart = false" *ngIf="orientStart == true"> stop </ion-button>
+      <ion-button class="but" (click)="sensors.watchOrientation(); orientStart = true" *ngIf="orientStart == false"> Start </ion-button>
+      <ion-button class="but" color="tertiary" (click)="sensors.stopOrientation(); orientStart = false" *ngIf="orientStart == true"> stop </ion-button>
       
-      <ion-button (click)="orientView = true" *ngIf="orientView==false">
+      <ion-button class="but" (click)="orientView = true" *ngIf="orientView==false">
         <ion-icon name="arrow-down-outline"></ion-icon>
       </ion-button>
       
-      <ion-button (click)="orientView = false" *ngIf="orientView==true">
+      <ion-button class="but" (click)="orientView = false" *ngIf="orientView==true">
         <ion-icon name="arrow-up-outline"></ion-icon>
       </ion-button>
     </ion-item>
@@ -109,23 +111,23 @@
     <!--Heading-->
     <ion-item color="secondary">
       <ion-label class="custom-label">Heading <em>North - deg</em></ion-label>
-      <ion-button (click)="sensors.watchHeading(); headStart = true" *ngIf="headStart == false"> Start </ion-button>
-      <ion-button color="tertiary" (click)="sensors.stopHeading(); headStart = false" *ngIf="headStart == true"> stop </ion-button>
+      <ion-button class="but" (click)="sensors.watchHeading(); headStart = true" *ngIf="headStart == false"> Start </ion-button>
+      <ion-button class="but" color="tertiary" (click)="sensors.stopHeading(); headStart = false" *ngIf="headStart == true"> stop </ion-button>
       
-      <ion-button (click)="headView = true" *ngIf="headView==false">
+      <ion-button class="but" (click)="headView = true" *ngIf="headView==false">
         <ion-icon name="arrow-down-outline"></ion-icon>
       </ion-button>
       
-      <ion-button (click)="headView = false" *ngIf="headView==true">
+      <ion-button class="but" (click)="headView = false" *ngIf="headView==true">
         <ion-icon name="arrow-up-outline"></ion-icon>
       </ion-button>
     </ion-item>
     <ion-item *ngIf="headView == true" >
       <ion-label color="primary" class="ion-no-margin" style="font-size: 10px;">
         
-        <ion-select [(ngModel)]="sensors.headingValuesType" interface="popover" >
-          <ion-select-option value="t" class="my-custom-option">true Heading</ion-select-option>
-          <ion-select-option value="m">magnetic Heading</ion-select-option>
+        <ion-select [(ngModel)]="sensors.headingValuesType" interface="popover" [interfaceOptions]=myCustomInterface>
+          <ion-select-option value="t" class="opt">true Heading</ion-select-option>
+          <ion-select-option value="m" class="opt">magnetic Heading</ion-select-option>
         </ion-select>
 
       </ion-label>
@@ -134,28 +136,6 @@
       <ion-label class="sens-sec">
         <app-sensor-section 
           [sensorValue]=" 'headingValue' " 
-          [colors]=theme.colorsArry>
-        </app-sensor-section>
-      </ion-label>
-    </ion-item>
-    <!--PROXIMITY-->
-    <ion-item color="secondary">
-      <ion-label class="custom-label">Proximity <em>lx</em></ion-label>
-      <ion-button (click)="sensors.watchLight(); lightStart = true" *ngIf="lightStart == false"> Start </ion-button>
-      <ion-button color="tertiary" (click)="sensors.stopLight(); lightStart = false" *ngIf="lightStart == true"> stop </ion-button>
-      
-      <ion-button (click)="lightView = true" *ngIf="lightView==false">
-        <ion-icon name="arrow-down-outline"></ion-icon>
-      </ion-button>
-      
-      <ion-button (click)="lightView = false" *ngIf="lightView==true">
-        <ion-icon name="arrow-up-outline"></ion-icon>
-      </ion-button>
-    </ion-item>
-    <ion-item *ngIf="lightView == true">
-      <ion-label class="sens-sec">
-        <app-sensor-section 
-          [sensorValue]=" 'lightValue' " 
           [colors]=theme.colorsArry>
         </app-sensor-section>
       </ion-label>

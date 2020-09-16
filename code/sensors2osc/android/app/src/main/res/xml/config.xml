@@ -18,9 +18,5 @@
     <param name="android-package" value="nl.sylvain.cordova.osc.OSCUtils"/>
   </feature>
 
-  <feature name="Sensors">
-    <param name="android-package" value="com.fabiorogeriosj.plugin.Sensors"/>
-  </feature>
-
   
 </widget>

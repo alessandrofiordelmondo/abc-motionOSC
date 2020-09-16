@@ -19,13 +19,16 @@ export class HomePage implements OnInit{
     public theme: SwitchThemeService
   ) {}
 
+  public myCustomInterface: any = {
+    cssClass: 'my-custom-interface'
+  }
+
   private sensList:string[] = [
     'accel',
     'gyro',
     'magne',
     'orient',
-    'heading',
-    'light'
+    'heading'
   ]
 
   public accelView:boolean = false;
@@ -38,8 +41,6 @@ export class HomePage implements OnInit{
   public orientStart:boolean = false;
   public headView:boolean = false;
   public headStart:boolean = false;
-  public lightView:boolean = false;
-  public lightStart:boolean = false;
 
   setupHosting(){
     this.modalCtrl.create({

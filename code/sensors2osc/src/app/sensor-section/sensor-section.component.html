@@ -3,7 +3,7 @@
       <ion-item class="add-item" color="tertiary" lines="full">
         <ion-label class="ion-no-margin" slot="start" color="secondary"> Address </ion-label>
         <ion-input class="ion-no-margin" type="text" [formControl]="addForm" [(ngModel)]="internalAddress"></ion-input>
-        <ion-button class="b-submit ion-no-margin" type="submit" (click)="changeAddress()" size="small" [disabled]="!addForm.valid">
+        <ion-button class="but" class="b-submit ion-no-margin" type="submit" (click)="changeAddress()" size="small" [disabled]="!addForm.valid">
           <ion-icon class="i-submit" name="checkmark-outline"></ion-icon>
         </ion-button>
       </ion-item>
