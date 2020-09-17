@@ -18,6 +18,6 @@ The application is only for Android. It was tested in _Lenovo K10 note_ model:`L
 - `RAM`: 6 GB
 - `Android version`: 9<br>
 <br>
-<img src="screenshot-home.png" width="200" height="400">
-<img src="screenshot-start.png" width="200" height="400">
-<img src="screenshot-settings.png" width="200" height="400">
+<img style="display:inline-block" src="screenshot-home.png" width="200" height="400">
+<img style="display:inline-block" src="screenshot-start.png" width="200" height="400">
+<img style="display:inline-block" src="screenshot-settings.png" width="200" height="400">
